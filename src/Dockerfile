@@ -7,7 +7,8 @@ RUN apt-get update                             && \
         git                                       \
         openssh-client                            \
         wget                                      \
-        zlib1g-dev                             && \
+        zlib1g-dev                                \
+        libzip-dev                             && \
     rm -rf /var/lib/apt/lists/*
     
 
@@ -21,7 +22,7 @@ RUN echo "[Date]" >> /usr/local/etc/php/php.ini && \
     echo "date.timezone = UTC" >> /usr/local/etc/php/php.ini
 
 # Install phpunit
-RUN curl --location --output /usr/local/bin/phpunit https://phar.phpunit.de/phpunit-6.4.phar &&\
+RUN curl --location --output /usr/local/bin/phpunit https://phar.phpunit.de/phpunit-8.phar &&\
     chmod +x /usr/local/bin/phpunit
 
 # install composer
